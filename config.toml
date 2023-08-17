@@ -1,4 +1,4 @@
-baseURL = 'https://zenicity.netlify.app'
+baseURL = 'https://zenicity.github.io'
 languageCode = 'en-us'
 title = 'Welcome To My Blog'
 theme = 'm10c'
