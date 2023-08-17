@@ -2,3 +2,11 @@ baseURL = 'https://zenicity.netlify.app'
 languageCode = 'en-us'
 title = 'Welcome To My Blog'
 theme = 'm10c'
+[params]
+  author = "Varun Subramanian"
+  description = "I make malware reports"
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/zenicity"
