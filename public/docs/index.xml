@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Welcome To My Blog</title>
+    <link>https://zenicity.github.io/docs/</link>
+    <description>Recent content in Docs on Welcome To My Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Aug 2023 18:04:47 +0530</lastBuildDate><atom:link href="https://zenicity.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HUI Analysis</title>
+      <link>https://zenicity.github.io/docs/hui/</link>
+      <pubDate>Sun, 13 Aug 2023 18:04:47 +0530</pubDate>
+      
+      <guid>https://zenicity.github.io/docs/hui/</guid>
+      <description>Contents 1 Initial Analysis 2 Secondary Analysis - 2.1 Function 1 - 2.2 Function 2 - 2.3 Encryption - 2.4 cef_api_hash - 2.5 Registry function 3 Dynamic Analysis - 3.1 IDA Debugger 4 CAPA Analysis 5 Conclusion HUI Sample Analysis Today, we will analyze a sample of HUI Loader and write a malware report on it
+SHA256 - 3ad1a9770a533c2bb8be9d4e7150a2a167d0709c4b0339a5fd6a511008cea7ef
+Tools Used Static Analysis: IDA,DIE,capa
+Dynamic Analysis: - IDA Debugger, Regedit</description>
+    </item>
+    
+  </channel>
+</rss>
