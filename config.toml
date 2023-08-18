@@ -1,10 +1,9 @@
 baseURL = 'https://zenicity.github.io'
 languageCode = 'en-us'
 title = 'Yokoso'
-theme = 'm10c'
+theme = 'Papermod'
 [params]
   author = "Varun Subramanian"
-  image source = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwiki.sportskeeda.com%2Fone-piece%2Fmonkey-d-luffy-in-one-piece&psig=AOvVaw2lvyAby79CgpbWoUpxIDvK&ust=1692460328594000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJCxmJXI5oADFQAAAAAdAAAAABAE"
   description = "I publish different malware reports."
   menu_item_separator = " - "
   [[params.social]]
