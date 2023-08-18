@@ -2,26 +2,23 @@
 title: "HUI Analysis"
 date: 2023-08-13T18:04:47+05:30
 ---
-# Contents
-
 ## [1 Initial Analysis](#1-initial-analysis)
-
 
 ## [2 Secondary Analysis](#2-secondary-analysis)
 
-#### - [2.1 Function 1](#21-function-1)
+    [2.1 Function 1](#21-function-1)
 
-#### - [2.2 Function 2](#22-function-2)
+    [2.2 Function 2](#22-function-2)
 
-#### - [2.3 Encryption](#23-encryption) 
+    [2.3 Encryption](#23-encryption) 
 
-#### - [2.4 cef_api_hash](#24-cef_api-_hash) 
+    [2.4 cef_api_hash](#24-cef_api-_hash) 
 
-#### - [2.5 Registry function](#25-registry-function)
+    [2.5 Registry function](#25-registry-function)
 
 ## [3 Dynamic Analysis](#3-dynamic-analysis)
 
-#### - [3.1 IDA Debugger](#31-ida-debugger)     
+    [3.1 IDA Debugger](#31-ida-debugger)     
 
 ## [4 CAPA Analysis](#4-capa-analysis)
 
