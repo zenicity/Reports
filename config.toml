@@ -10,3 +10,7 @@ theme = 'm10c'
     icon = "github"
     name = "Github"
     url = "https://github.com/zenicity"
+  [[params.social]]
+    icon = "twitter"
+    name = "twitter"
+    url = "https://twitter.com/home"
