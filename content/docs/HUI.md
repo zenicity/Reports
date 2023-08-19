@@ -18,6 +18,7 @@ date: 2023-08-13T18:04:47+05:30
 
 ## [3 Dynamic Analysis](#3-dynamic-analysis)
 
+
 #### [3.1 IDA Debugger](#31-ida-debugger)    
 
 ## [4 CAPA Analysis](#4-capa-analysis)
