@@ -3,7 +3,7 @@ title: "HUI Analysis"
 date: 2023-08-13T18:04:47+05:30
 
 ## Table of Contents
-
+index: true
 1. [Initial Analysis](#1-initial-analysis)
 2. [Secondary Analysis](#2-secondary-analysis)
    1. [Function 1](#21-function-1)
