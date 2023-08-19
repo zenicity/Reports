@@ -2,29 +2,6 @@
 title: "HUI Analysis"
 date: 2023-08-13T18:04:47+05:30
 ---
-## [1 Initial Analysis](#1-initial-analysis)
-
-## [2 Secondary Analysis](#2-secondary-analysis)
-
-#### * [2.1 Function 1](#21-function-1)
-
-#### * [2.2 Function 2](#22-function-2)
-
-#### * [2.3 Encryption](#23-encryption) 
-
-#### * [2.4 cef_api_hash](#24-cef_api-_hash)
-
-#### * [2.5 Registry function](#25-registry-function)
-
-## [3 Dynamic Analysis](#3-dynamic-analysis)
-
-
-#### * [3.1 IDA Debugger](#31-ida-debugger)    
-
-## [4 CAPA Analysis](#4-capa-analysis)
-
-## [5 Conclusion](#5-conclusion)
-
 # HUI Sample Analysis
 
 Today, we will analyze a sample of HUI Loader and write a malware report on it
@@ -36,7 +13,30 @@ Static Analysis: IDA,DIE,capa
 
 Dynamic Analysis: - IDA Debugger, Regedit
 
-## 1. Initial Analysis
+### [1 Initial Analysis](#1-initial-analysis)
+
+### [2 Secondary Analysis](#2-secondary-analysis)
+
+#### [2.1 Function 1](#21-function-1)
+
+#### [2.2 Function 2](#22-function-2)
+
+#### [2.3 Encryption](#23-encryption) 
+
+#### [2.4 cef_api_hash](#24-cef_api-_hash)
+
+#### [2.5 Registry function](#25-registry-function)
+
+### [3 Dynamic Analysis](#3-dynamic-analysis)
+
+
+#### [3.1 IDA Debugger](#31-ida-debugger)    
+
+### [4 CAPA Analysis](#4-capa-analysis)
+
+### [5 Conclusion](#5-conclusion)
+
+### 1. Initial Analysis
 
 For starters, Let us put it through DIE and see what comes up
 
@@ -47,7 +47,7 @@ For starters, Let us put it through DIE and see what comes up
 From this, we can get that it is a 64 bit DLL and it's date stamp is
 very recent
 
-## 2. Secondary Analysis
+### 2. Secondary Analysis
 
 Putting the binary into IDA, we can have a look at all the functions and API calls
 
@@ -59,7 +59,7 @@ StartAddress calls two functions
 
 {{< figure src="/2.2.png" caption="Fig 2.2 - Functions present inside of StartAddress" >}}
 
-### 2.1 Function 1
+#### 2.1 Function 1
 
 The first function is responsible for getting the handle for ntdll function and **dynamically** calling the APIs present inside of it as well as getting the process environment block of the current process using **NtCurrentPeb()** which basically has the same functionality of **NtCurrentTeb.**.
 I'll name it Dynamic_Link for better understanding
@@ -67,7 +67,7 @@ I'll name it Dynamic_Link for better understanding
 {{< figure src="/2.1.1.png" caption="Fig 2.1.1 - sub_1800013F0" >}}
 
 
-### 2.2 Function 2
+#### 2.2 Function 2
 
 The second one creates a file with filename **String1**, lets rename it
 as File_name. Then, using **CreateFileMapping**, creates a mapping of the file which
@@ -82,7 +82,7 @@ Let us look into it
 
 {{< figure src="/2.2.1.png" caption="Fig 2.2.1 - sub_1800016E0" >}}
 
-### 2.3 Encryption
+#### 2.3 Encryption
 
 Let us check out the function inside of sub_1800016E0, which could be
 vital. Sub_180001820 seems like an encryption scheme. It has a lot of mod 256
@@ -97,7 +97,7 @@ Searching online, I found this sample implementation. This looks just
 like the basics of what is given inside of the function. So let us name
 it RC4_Encryption.
 
-### 2.4 cef\_api \_hash
+#### 2.4 cef\_api \_hash
 
 The function cef_api_hash looks suspicious 
 
@@ -121,7 +121,7 @@ take one thing into consideration - that **SetEvent** has already been
 called in a previous function meaning this will set the event toa
 signaled state. Let us rename this as Thread_creation.
 
-### 2.5 Registry Function
+#### 2.5 Registry Function
 
 After looking through a few more functions, we come across
 cef_string_multimap_size, which uses **RegOpenKey** and **RegQueryInfoKey** which are registry
@@ -134,9 +134,9 @@ retrieve one single subkey which is being printed and finally closes it using **
 
 We will now check what exactly this function returns by using the **IDA debugger**
 
-## 3. Dynamic Analysis
+### 3. Dynamic Analysis
 
-### 3.1 IDA Debugger
+#### 3.1 IDA Debugger
 
 {{< figure src="/3.1.1.png" caption="Fig 3.1.1 - Debugging process setting" >}}
 
@@ -161,14 +161,14 @@ Let us now open up regedit to check the registries and subkeys and we can see th
 
 All of those are subkeys that come under **.DEFAULT/Software**. Each of those subkeys have classifications with different data values
 
-## 4 CAPA Analysis
+### 4 CAPA Analysis
 Capa is a tool that can be used to identify capabilities in executable files. It can be used to detect capabilities in malware samples. This is very helpful in our case as we can get a gist of what the malware is capable of doing
 
 Let's check it out in **Capa**
 
 {{< figure src="/4.1.png" caption="Fig 4.1 - Capa analysis" >}}
 
-## 5 Conclusion
+### 5 Conclusion
 Based on static and dynamic analysis and the capa results, 
 we can get the gist of how this malware functions. It first
 contains encrypted payload i.e. shellcode which it decrypts and loads
