@@ -1,9 +1,11 @@
 ---
 title: "HUI Analysis"
 date: 2023-08-13T18:04:47+05:30
+index: true
+---
 
 ## Table of Contents
-index: true
+
 1. [Initial Analysis](#1-initial-analysis)
 2. [Secondary Analysis](#2-secondary-analysis)
    1. [Function 1](#21-function-1)
@@ -15,7 +17,7 @@ index: true
    1. [IDA Debugger](#31-ida-debugger)
 4. [CAPA Analysis](#4-capa-analysis)
 5. [Conclusion](#5-conclusion)
----
+
 # HUI Sample Analysis
 
 Today, we will analyze a sample of HUI Loader and write a malware report on it
